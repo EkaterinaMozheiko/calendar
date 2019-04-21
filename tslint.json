@@ -1,0 +1,183 @@
+{
+  "defaultSeverity": "error",
+  "rules": {
+    "no-unnecessary-class": [
+      true,
+      "allow-constructor-only",
+      "allow-static-only",
+      "allow-empty-class"
+    ],
+    "member-access": [
+      true,
+      "no-public"
+    ],
+    "member-ordering": [
+      true,
+      {
+        "order": [
+          "public-before-private",
+          "static-before-instance",
+          "variables-before-functions"
+        ]
+      }
+    ],
+    "adjacent-overload-signatures": true,
+    "unified-signatures": true,
+    "unnecessary-constructor": true,
+    "no-empty-interface": true,
+    "prefer-method-signature": true,
+    "interface-over-type-literal": true,
+    "no-parameter-reassignment": true,
+    "arrow-return-shorthand": [
+      true,
+      "multiline"
+    ],
+    "no-unnecessary-callback-wrapper": true,
+    "no-use-before-declare": true,
+    "prefer-const": true,
+    "no-var-keyword": true,
+    "no-shadowed-variable": [
+      true,
+      {
+        "temporalDeadZone": false
+      }
+    ],
+    "no-duplicate-variable": [
+      true,
+      "check-parameters"
+    ],
+    "no-unnecessary-initializer": true,
+    "no-implicit-dependencies": [true, "dev"],
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "case-insensitive",
+        "named-imports-order": "case-insensitive",
+        "grouped-imports": false
+      }
+    ],
+    "no-duplicate-imports": true,
+    "no-require-imports": true,
+    "no-inferrable-types": true,
+    "use-default-type-parameter": true,
+    "no-object-literal-type-assertion": true,
+    "no-unnecessary-type-assertion": true,
+    "callable-types": true,
+    "array-type": [
+      true,
+      "generic"
+    ],
+    "prefer-object-spread": true,
+    "object-literal-shorthand": true,
+    "no-string-literal": true,
+    "object-literal-key-quotes": [
+      true,
+      "as-needed"
+    ],
+    "quotemark": [true, "single", "jsx-double"],
+    "triple-equals": [
+      true,
+      "allow-null-check"
+    ],
+    "prefer-conditional-expression": [
+      true,
+      "check-else-if"
+    ],
+    "prefer-for-of": true,
+    "max-line-length": [
+      true,
+      140
+    ],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "eofline": true,
+    "curly": true,
+    "whitespace": [
+      true,
+      "check-branch",
+      "check-decl",
+      "check-operator",
+      "check-module",
+      "check-separator",
+      "check-type",
+      "check-typecast",
+      "check-type-operator",
+      "check-preblock"
+    ],
+    "typedef-whitespace": [
+      true,
+      {
+        "call-signature": "nospace",
+        "index-signature": "nospace",
+        "parameter": "nospace",
+        "property-declaration": "nospace",
+        "variable-declaration": "nospace"
+      },
+      {
+        "call-signature": "onespace",
+        "index-signature": "onespace",
+        "parameter": "onespace",
+        "property-declaration": "onespace",
+        "variable-declaration": "onespace"
+      }
+    ],
+    "space-before-function-paren": [
+      true,
+      {
+        "anonymous": "never",
+        "named": "never",
+        "asyncArrow": "always",
+        "method": "never",
+        "constructor": "never"
+      }
+    ],
+    "import-spacing": true,
+    "no-trailing-whitespace": true,
+    "newline-before-return": true,
+    "one-line": [
+      true,
+      "check-open-brace",
+      "check-whitespace",
+      "check-else",
+      "check-catch",
+      "check-finally"
+    ]
+  },
+  "semicolon": [
+    true,
+    "always",
+    "strict-bound-class-methods"
+  ],
+  "align": [
+    true,
+    "elements",
+    "members",
+    "parameters",
+    "statements"
+  ],
+  "trailing-comma": [
+    true,
+    {
+      "multiline": "never",
+      "singleline": "never",
+      "esSpecCompliant": true
+    }
+  ],
+  "variable-name": [
+    true,
+    "check-format",
+    "allow-leading-underscore",
+    "require-const-for-all-caps",
+    "ban-keywords"
+  ],
+  "no-unused-expression": [
+    true,
+    "allow-fast-null-checks"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}
