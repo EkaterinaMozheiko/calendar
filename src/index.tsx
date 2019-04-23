@@ -1,8 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import App from './components/App';
+import Converter from './components/converter';
 
 ReactDOM.render(
-  <App testMessage="test message"/>, document.getElementById('root')
+  <Converter />, document.getElementById('root')
 );

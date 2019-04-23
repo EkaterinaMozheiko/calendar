@@ -13,6 +13,6 @@
   "include": [
     "./src/**/*", 
     "jest.setup.js", 
-    "declarations.d.ts"
+    "src/globals.d.ts"
   ]
 }
