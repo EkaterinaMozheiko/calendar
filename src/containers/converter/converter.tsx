@@ -1,15 +1,19 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import ConverterPanel from '../../components/converter-panel/converter-panel';
 
+import { Header } from '../../components/header';
 import * as styles from './converter.module.scss';
 
 class Converter extends Component {
   render() {
     return (
-      <div className={styles.converter}>
-        <ConverterPanel/>
-      </div>
+      <Fragment>
+        <Header />
+        <div className={styles.converter}>
+          <ConverterPanel/>
+        </div>
+      </Fragment>
     );
   }
 }
