@@ -58,9 +58,16 @@ export const styles = ({ palette, spacing }: Theme) => createStyles({
   }
 });
 
+interface Currency {
+  currencyName: string;
+  currencySymbol?: string;
+  id: string;
+}
+
 export interface DropdownProps extends WithStyles<typeof styles> {
   theme: Theme;
   placeholder: string;
+  currencies: Array<Currency>;
 }
 
 interface SelectOption {
@@ -159,7 +166,7 @@ const components = {
 };
 
 function Dropdown(props: DropdownProps) {
-  const { classes, theme, placeholder } = props;
+  const { classes, theme, placeholder, currencies } = props;
 
   const selectStyles = {
     input: (base: CSSProperties) => ({
@@ -177,6 +184,7 @@ function Dropdown(props: DropdownProps) {
         classes={classes}
         styles={selectStyles}
         components={components}
+        options={currencies.map(currency => ({value: currency.currencyName, label: currency.currencyName}))}
         placeholder={placeholder} />
     </div>
   );
