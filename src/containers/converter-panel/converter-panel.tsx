@@ -3,7 +3,8 @@ import Button from '@material-ui/core/Button';
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 
-import { Dropdown } from '../dropdown';
+import { Dropdown } from '../../components/dropdown';
+import { SelectOption } from '../../models';
 
 import * as styles from './converter-panel.module.scss';
 
@@ -11,6 +12,7 @@ const API_KEY = 'bed51a86899052527c76';
 
 function ConverterPanel() {
   const [currencies, setCurrencies] = useState([]);
+  const [currenciesToConvert, setCurrenciesToConvert] = useState({});
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,6 +25,10 @@ function ConverterPanel() {
     fetchData();
   }, []);
 
+  function handleChangeCurrency({value, label}: SelectOption) {
+    setCurrenciesToConvert({...currenciesToConvert, [value]: label});
+  }
+
   return (
     <main className={styles.panelContent}>
       <div className={styles.item}>
@@ -33,10 +39,20 @@ function ConverterPanel() {
         />
       </div>
       <div className={styles.item}>
-        <Dropdown placeholder="From" currencies={currencies} />
+        <Dropdown
+          placeholder="From"
+          currencies={currencies}
+          name="From"
+          handleChangeCurrency={handleChangeCurrency}
+        />
       </div>
       <div className={styles.item}>
-        <Dropdown placeholder="To" currencies={currencies} />
+        <Dropdown
+          placeholder="To"
+          currencies={currencies}
+          name="To"
+          handleChangeCurrency={handleChangeCurrency}
+        />
       </div>
       <Button variant="contained" color="primary">
         Convert

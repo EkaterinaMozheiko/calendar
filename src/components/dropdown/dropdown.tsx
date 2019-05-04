@@ -13,6 +13,8 @@ import { OptionProps } from 'react-select/lib/components/Option';
 import { PlaceholderProps } from 'react-select/lib/components/Placeholder';
 import { SingleValueProps } from 'react-select/lib/components/SingleValue';
 
+import { SelectOption } from '../../models';
+
 export const styles = ({ palette, spacing }: Theme) => createStyles({
   root: {
     flexGrow: 1
@@ -68,11 +70,8 @@ export interface DropdownProps extends WithStyles<typeof styles> {
   theme: Theme;
   placeholder: string;
   currencies: Array<Currency>;
-}
-
-interface SelectOption {
-  label: string;
-  value: string;
+  name: string;
+  handleChangeCurrency: (value: SelectOption) => void;
 }
 
 function NoOptionsMessage(props: NoticeProps<SelectOption>) {
@@ -166,7 +165,7 @@ const components = {
 };
 
 function Dropdown(props: DropdownProps) {
-  const { classes, theme, placeholder, currencies } = props;
+  const { classes, theme, placeholder, currencies, name, handleChangeCurrency } = props;
 
   const selectStyles = {
     input: (base: CSSProperties) => ({
@@ -184,7 +183,8 @@ function Dropdown(props: DropdownProps) {
         classes={classes}
         styles={selectStyles}
         components={components}
-        options={currencies.map(currency => ({value: currency.currencyName, label: currency.currencyName}))}
+        onChange={handleChangeCurrency}
+        options={currencies.map(currency => ({value: name, label: currency.currencyName}))}
         placeholder={placeholder} />
     </div>
   );

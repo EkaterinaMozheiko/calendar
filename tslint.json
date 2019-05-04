@@ -25,7 +25,6 @@
     "unified-signatures": true,
     "unnecessary-constructor": true,
     "no-empty-interface": true,
-    "prefer-method-signature": true,
     "interface-over-type-literal": true,
     "no-parameter-reassignment": true,
     "arrow-return-shorthand": [

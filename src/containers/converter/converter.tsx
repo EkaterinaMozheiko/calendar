@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from 'react';
 
-import ConverterPanel from '../../components/converter-panel/converter-panel';
+import ConverterPanel from '../converter-panel/converter-panel';
 
 import { Header } from '../../components/header';
+
 import * as styles from './converter.module.scss';
 
 class Converter extends Component {
@@ -11,7 +12,7 @@ class Converter extends Component {
       <Fragment>
         <Header />
         <div className={styles.converter}>
-          <ConverterPanel/>
+          <ConverterPanel />
         </div>
       </Fragment>
     );
